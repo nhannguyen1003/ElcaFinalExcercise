@@ -47,3 +47,15 @@ C:\Users\NTNH\Desktop\final excercise\ElcaPIMTool.Plugins.Unittest\obj\Debug\Elc
 C:\Users\NTNH\Desktop\final excercise\ElcaPIMTool.Plugins.Unittest\obj\Debug\ElcaPIMTool.Plugins.Unittest.dll
 C:\Users\NTNH\Desktop\final excercise\ElcaPIMTool.Plugins.Unittest\obj\Debug\ElcaPIMTool.Plugins.Unittest.pdb
 C:\Users\NTNH\Desktop\final excercise\ElcaPIMTool.Plugins.Unittest\obj\Debug\ElcaPIMTool.Plugins.Unittest.csproj.AssemblyReference.cache
+C:\Users\NTNH\Desktop\final excercise\ElcaPIMTool.Plugins.Unittest\bin\Debug\ElcaPIMTool.Common.dll
+C:\Users\NTNH\Desktop\final excercise\ElcaPIMTool.Plugins.Unittest\bin\Debug\ElcaPIMTool.Common.pdb
+C:\Users\NTNH\Desktop\final excercise\ElcaPIMTool.Plugins.Unittest\bin\Debug\ElcaPIMTool.Common.dll.config
+C:\Users\NTNH\Desktop\final excercise\ElcaPIMTool.Plugins.Unittest\bin\Debug\Microsoft.Crm.Sdk.Proxy.xml
+C:\Users\NTNH\Desktop\final excercise\ElcaPIMTool.Plugins.Unittest\bin\Debug\Microsoft.IdentityModel.Clients.ActiveDirectory.xml
+C:\Users\NTNH\Desktop\final excercise\ElcaPIMTool.Plugins.Unittest\bin\Debug\Microsoft.Xrm.Sdk.xml
+C:\Users\NTNH\Desktop\final excercise\ElcaPIMTool.Plugins.Unittest\bin\Debug\Microsoft.Xrm.Sdk.Deployment.xml
+C:\Users\NTNH\Desktop\final excercise\ElcaPIMTool.Plugins.Unittest\bin\Debug\Microsoft.Xrm.Tooling.Connector.xml
+C:\Users\NTNH\Desktop\final excercise\ElcaPIMTool.Plugins.Unittest\bin\Debug\Newtonsoft.Json.xml
+C:\Users\NTNH\Desktop\final excercise\ElcaPIMTool.Plugins.Unittest\bin\Debug\System.Memory.xml
+C:\Users\NTNH\Desktop\final excercise\ElcaPIMTool.Plugins.Unittest\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\NTNH\Desktop\final excercise\ElcaPIMTool.Plugins.Unittest\bin\Debug\System.ValueTuple.xml

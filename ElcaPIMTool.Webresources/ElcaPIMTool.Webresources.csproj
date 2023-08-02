@@ -48,14 +48,15 @@
     <Reference Include="Castle.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
       <HintPath>packages\Castle.Core.4.3.1\lib\net45\Castle.Core.dll</HintPath>
     </Reference>
-    <Reference Include="FakeItEasy, Version=6.0.0.0, Culture=neutral, PublicKeyToken=eff28e2146d5fd2c, processorArchitecture=MSIL">
-      <HintPath>packages\FakeItEasy.6.0.0\lib\net45\FakeItEasy.dll</HintPath>
-    </Reference>
     <Reference Include="FSharp.Core, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>packages\FSharp.Core.6.0.2\lib\netstandard2.0\FSharp.Core.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Crm.Sdk.Proxy, Version=8.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.CrmSdk.CoreAssemblies.8.2.0.1\lib\net45\Microsoft.Crm.Sdk.Proxy.dll</HintPath>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.6.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Crm.Sdk.Proxy, Version=9.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CrmSdk.CoreAssemblies.9.0.2.45\lib\net462\Microsoft.Crm.Sdk.Proxy.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="microsoft.identitymodel, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -67,36 +68,66 @@
     <Reference Include="Microsoft.IdentityModel.Clients.ActiveDirectory.Platform, Version=3.19.8.16603, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.IdentityModel.Clients.ActiveDirectory.3.19.8\lib\net45\Microsoft.IdentityModel.Clients.ActiveDirectory.Platform.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Xrm.Sdk, Version=8.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.CrmSdk.CoreAssemblies.8.2.0.1\lib\net45\Microsoft.Xrm.Sdk.dll</HintPath>
+    <Reference Include="Microsoft.Rest.ClientRuntime, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CrmSdk.XrmTooling.CoreAssembly.9.1.1.41\lib\net462\Microsoft.Rest.ClientRuntime.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="Microsoft.Xrm.Sdk.Deployment, Version=8.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.CrmSdk.Deployment.8.2.0.2\lib\net452\Microsoft.Xrm.Sdk.Deployment.dll</HintPath>
+    <Reference Include="Microsoft.Xrm.Sdk, Version=9.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CrmSdk.CoreAssemblies.9.0.2.45\lib\net462\Microsoft.Xrm.Sdk.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="Microsoft.Xrm.Sdk.Workflow, Version=8.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.CrmSdk.Workflow.8.2.0.2\lib\net452\Microsoft.Xrm.Sdk.Workflow.dll</HintPath>
+    <Reference Include="Microsoft.Xrm.Sdk.Deployment, Version=9.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CrmSdk.Deployment.9.0.2.25\lib\net462\Microsoft.Xrm.Sdk.Deployment.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="Microsoft.Xrm.Tooling.Connector, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.CrmSdk.XrmTooling.CoreAssembly.8.2.0.5\lib\net452\Microsoft.Xrm.Tooling.Connector.dll</HintPath>
+    <Reference Include="Microsoft.Xrm.Sdk.Workflow, Version=9.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CrmSdk.Workflow.9.0.2.42\lib\net462\Microsoft.Xrm.Sdk.Workflow.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Microsoft.Xrm.Tooling.Connector, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CrmSdk.XrmTooling.CoreAssembly.9.1.1.41\lib\net462\Microsoft.Xrm.Tooling.Connector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="PresentationFramework" />
     <Reference Include="System.Activities" />
     <Reference Include="System.Activities.Presentation" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
     <Reference Include="System.DirectoryServices" />
     <Reference Include="System.DirectoryServices.AccountManagement" />
     <Reference Include="System.IdentityModel" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
     <Reference Include="System.Net" />
     <Reference Include="System.Net.Http, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System.Net.Http.WebRequest" />
     <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
     <Reference Include="System.Runtime, Version=4.1.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Text.Encodings.Web, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.6.0.0\lib\net461\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=6.0.0.7, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Json.6.0.7\lib\net461\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
     <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.ValueTuple.4.5.0\lib\net461\System.ValueTuple.dll</HintPath>
     </Reference>
@@ -126,25 +157,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="bin\coretools\CrmSvcUtil.exe" />
-    <Content Include="bin\coretools\CrmSvcUtil.xml" />
-    <Content Include="bin\coretools\Microsoft.ApplicationInsights.dll" />
-    <Content Include="bin\coretools\Microsoft.Crm.Sdk.Proxy.dll" />
-    <Content Include="bin\coretools\Microsoft.IdentityModel.Clients.ActiveDirectory.dll" />
-    <Content Include="bin\coretools\Microsoft.PowerPlatform.Tooling.BatchedTelemetry.dll" />
-    <Content Include="bin\coretools\Microsoft.Rest.ClientRuntime.dll" />
-    <Content Include="bin\coretools\Microsoft.Xrm.Sdk.Deployment.dll" />
-    <Content Include="bin\coretools\Microsoft.Xrm.Sdk.dll" />
-    <Content Include="bin\coretools\Microsoft.Xrm.Tooling.Connector.dll" />
-    <Content Include="bin\coretools\Microsoft.Xrm.Tooling.CrmConnectControl.dll" />
-    <Content Include="bin\coretools\Microsoft.Xrm.Tooling.Ui.Styles.dll" />
-    <Content Include="bin\coretools\Newtonsoft.Json.dll" />
-    <Content Include="bin\coretools\Other Redistributable.txt" />
-    <Content Include="bin\coretools\pacTelemetryUpload.exe" />
-    <Content Include="bin\coretools\SolutionPackager.exe" />
-    <Content Include="bin\coretools\SolutionPackagerLib.dll" />
-    <Content Include="bin\coretools\System.Diagnostics.DiagnosticSource.dll" />
-    <Content Include="bin\coretools\System.ValueTuple.dll" />
     <Content Include="bin\ElcaPIMTool.dll" />
     <Content Include="bin\ElcaPIMTool.pdb" />
     <Content Include="bin\FSharp.Core.dll" />
@@ -201,14 +213,26 @@
     <Content Include="bin\System.ValueTuple.dll" />
     <Content Include="bin\XrmDefinitelyTyped.exe" />
     <Content Include="ElcaPIMTool\Apps\js\Apps\src\Project.js" />
+    <Content Include="ElcaPIMTool\Apps\js\Apps\src\Project.js.map" />
     <Content Include="ElcaPIMTool\Apps\js\Apps\src\scripts.js" />
+    <Content Include="ElcaPIMTool\Apps\js\Apps\src\scripts.js.map" />
     <Content Include="ElcaPIMTool\Apps\js\Common\common.js" />
+    <Content Include="ElcaPIMTool\Apps\js\Common\common.js.map" />
     <Content Include="ElcaPIMTool\Apps\js\Common\const.js" />
+    <Content Include="ElcaPIMTool\Apps\js\Common\const.js.map" />
     <Content Include="ElcaPIMTool\Apps\js\Entities\Project\CloseButtonHandler.js" />
+    <Content Include="ElcaPIMTool\Apps\js\Entities\Project\CloseButtonHandler.js.map" />
     <Content Include="ElcaPIMTool\Apps\js\Entities\Project\DisableProjectNumberFieldOnLoad.js" />
+    <Content Include="ElcaPIMTool\Apps\js\Entities\Project\DisableProjectNumberFieldOnLoad.js.map" />
     <Content Include="ElcaPIMTool\Apps\js\Entities\Project\LinkEmployeeByVisaOnSave.js" />
+    <Content Include="ElcaPIMTool\Apps\js\Entities\Project\LinkEmployeeByVisaOnSave.js.map" />
     <Content Include="ElcaPIMTool\Apps\js\Entities\Project\PluginResources.js" />
+    <Content Include="ElcaPIMTool\Apps\js\Entities\Project\PluginResources.js.map" />
     <Content Include="ElcaPIMTool\Apps\js\Entities\Project\ValidateMemberVisaOnChange.js" />
+    <Content Include="ElcaPIMTool\Apps\js\Entities\Project\ValidateMemberVisaOnChange.js.map" />
+    <Content Include="ElcaPIMTool\Apps\PIMDashboard\index.html" />
+    <Content Include="ElcaPIMTool\Apps\PIMDashboard\PIMDashboard.css" />
+    <Content Include="ElcaPIMTool\Apps\PIMDashboard\PIMDashboard.js" />
     <Content Include="ElcaPIMTool\Apps\src\assets\logo_elca.png" />
     <Content Include="ElcaPIMTool\Apps\src\assets\nextpage_icon.png" />
     <Content Include="ElcaPIMTool\Apps\src\assets\previous_page.png" />
@@ -217,12 +241,21 @@
     <Content Include="ElcaPIMTool\Apps\src\assets\us_2.jpg" />
     <Content Include="ElcaPIMTool\Apps\src\assets\us_2_guide.jpg" />
     <Content Include="ElcaPIMTool\Apps\src\index.html" />
-    <Content Include="ElcaPIMTool\dist\assets\logo_elca.png" />
-    <Content Include="ElcaPIMTool\dist\DashBoardResources.css" />
-    <Content Include="ElcaPIMTool\dist\index.html" />
-    <Content Include="ElcaPIMTool\dist\PIMDashboardScript.css" />
-    <Content Include="ElcaPIMTool\dist\PIMDashboardScript.js" />
-    <Content Include="ElcaPIMTool\dist\PluginResources.js" />
+    <Content Include="ElcaPIMTool\Apps\src\styles.scss" />
+    <Content Include="ElcaPIMTool\Apps\src\_global.scss" />
+    <Content Include="ElcaPIMTool\Apps\src\_variable.scss" />
+    <Content Include="ElcaPIMTool\js\CloseButtonRibbonHandler.js" />
+    <Content Include="ElcaPIMTool\js\DateHandler.js" />
+    <Content Include="ElcaPIMTool\js\DisableProjectNumberFieldOnLoad.js" />
+    <Content Include="ElcaPIMTool\js\ValidateMemberVisaOnChange.js" />
+    <Content Include="ElcaPIMTool\tools\spkl\deploy-plugins.bat" />
+    <Content Include="ElcaPIMTool\tools\spkl\deploy-webresources.bat" />
+    <Content Include="ElcaPIMTool\tools\spkl\deploy-workflows.bat" />
+    <Content Include="ElcaPIMTool\tools\spkl\download-webresources.bat" />
+    <Content Include="ElcaPIMTool\tools\spkl\earlybound.bat" />
+    <Content Include="ElcaPIMTool\tools\spkl\instrument-plugin-code.bat" />
+    <Content Include="ElcaPIMTool\tools\spkl\pack+import.bat" />
+    <Content Include="ElcaPIMTool\tools\spkl\unpack.bat" />
     <Content Include="ElcaPIMTool\tools\XrmDefinitelyTyped\dg.xrmquery.web.js" />
     <Content Include="ElcaPIMTool\tools\XrmDefinitelyTyped\FSharp.Core.dll" />
     <Content Include="ElcaPIMTool\tools\XrmDefinitelyTyped\Microsoft.Crm.Sdk.Proxy.dll" />
@@ -236,6 +269,8 @@
     <Content Include="ElcaPIMTool\tools\XrmDefinitelyTyped\Microsoft.Xrm.Tooling.Connector.dll" />
     <Content Include="ElcaPIMTool\tools\XrmDefinitelyTyped\netstandard.dll" />
     <Content Include="ElcaPIMTool\tools\XrmDefinitelyTyped\Newtonsoft.Json.dll" />
+    <Content Include="ElcaPIMTool\tools\XrmDefinitelyTyped\Run.fsx" />
+    <Content Include="ElcaPIMTool\tools\XrmDefinitelyTyped\Run.ps1" />
     <Content Include="ElcaPIMTool\tools\XrmDefinitelyTyped\System.AppContext.dll" />
     <Content Include="ElcaPIMTool\tools\XrmDefinitelyTyped\System.Collections.Concurrent.dll" />
     <Content Include="ElcaPIMTool\tools\XrmDefinitelyTyped\System.Collections.dll" />
@@ -331,28 +366,12 @@
     <Content Include="ElcaPIMTool\tools\XrmDefinitelyTyped\System.Xml.XPath.dll" />
     <Content Include="ElcaPIMTool\tools\XrmDefinitelyTyped\System.Xml.XPath.XDocument.dll" />
     <Content Include="ElcaPIMTool\tools\XrmDefinitelyTyped\XrmDefinitelyTyped.exe" />
+    <Content Include="ElcaPIMTool\tools\XrmDefinitelyTyped\XrmDefinitelyTyped.exe.config" />
     <Content Include="ElcaPIMTool\tools\XrmDefinitelyTyped\XrmDefinitelyTyped.xml" />
     <Content Include="Web.config" />
     <Content Include="webpack.config.js" />
-    <Content Include="XrmDefinitelyTyped\FSharp.Core.dll" />
-    <Content Include="XrmDefinitelyTyped\Microsoft.Crm.Sdk.Proxy.dll" />
-    <Content Include="XrmDefinitelyTyped\Microsoft.IdentityModel.Clients.ActiveDirectory.dll" />
-    <Content Include="XrmDefinitelyTyped\Microsoft.IdentityModel.Clients.ActiveDirectory.Platform.dll" />
-    <Content Include="XrmDefinitelyTyped\Microsoft.Rest.ClientRuntime.dll" />
-    <Content Include="XrmDefinitelyTyped\Microsoft.Xrm.Sdk.Deployment.dll" />
-    <Content Include="XrmDefinitelyTyped\Microsoft.Xrm.Sdk.dll" />
-    <Content Include="XrmDefinitelyTyped\Microsoft.Xrm.Sdk.Workflow.dll" />
-    <Content Include="XrmDefinitelyTyped\Microsoft.Xrm.Tooling.Connector.dll" />
-    <Content Include="XrmDefinitelyTyped\Newtonsoft.Json.dll" />
-    <Content Include="XrmDefinitelyTyped\System.Buffers.dll" />
-    <Content Include="XrmDefinitelyTyped\System.Memory.dll" />
-    <Content Include="XrmDefinitelyTyped\System.Numerics.Vectors.dll" />
-    <Content Include="XrmDefinitelyTyped\System.Runtime.CompilerServices.Unsafe.dll" />
-    <Content Include="XrmDefinitelyTyped\XrmDefinitelyTyped.exe" />
-    <Content Include="XrmDefinitelyTyped\XrmDefinitelyTyped.xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CrmPluginRegistrationAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -367,34 +386,10 @@
     <Content Include="bin\roslyn\vbc.exe.config" />
     <Content Include="bin\roslyn\vbc.rsp" />
     <Content Include="bin\roslyn\VBCSCompiler.exe.config" />
-    <Content Include="bin\coretools\SolutionPackager.exe.config" />
-    <Content Include="bin\coretools\pacTelemetryUpload.exe.config" />
-    <Content Include="bin\coretools\LicenseTerms.docx" />
-    <Content Include="bin\coretools\CrmSvcUtil.exe.config" />
     <Content Include="package.json" />
-    <Content Include="ElcaPIMTool\Apps\js\Apps\src\Project.js.map" />
-    <Content Include="ElcaPIMTool\Apps\js\Apps\src\scripts.js.map" />
-    <Content Include="ElcaPIMTool\Apps\js\Common\common.js.map" />
-    <Content Include="ElcaPIMTool\Apps\js\Common\const.js.map" />
-    <Content Include="ElcaPIMTool\Apps\js\Entities\Project\CloseButtonHandler.js.map" />
-    <Content Include="ElcaPIMTool\Apps\js\Entities\Project\DisableProjectNumberFieldOnLoad.js.map" />
-    <Content Include="ElcaPIMTool\Apps\js\Entities\Project\LinkEmployeeByVisaOnSave.js.map" />
-    <Content Include="ElcaPIMTool\Apps\js\Entities\Project\PluginResources.js.map" />
-    <Content Include="ElcaPIMTool\Apps\js\Entities\Project\ValidateMemberVisaOnChange.js.map" />
-    <Content Include="ElcaPIMTool\Apps\src\styles.scss" />
-    <Content Include="ElcaPIMTool\Apps\src\_global.scss" />
-    <Content Include="ElcaPIMTool\Apps\src\_variable.scss" />
-    <Content Include="ElcaPIMTool\tools\spkl\deploy-plugins.bat" />
-    <Content Include="ElcaPIMTool\tools\spkl\deploy-webresources.bat" />
-    <Content Include="ElcaPIMTool\tools\spkl\deploy-workflows.bat" />
-    <Content Include="ElcaPIMTool\tools\spkl\download-webresources.bat" />
-    <Content Include="ElcaPIMTool\tools\spkl\earlybound.bat" />
-    <Content Include="ElcaPIMTool\tools\spkl\instrument-plugin-code.bat" />
-    <Content Include="ElcaPIMTool\tools\spkl\pack+import.bat" />
-    <Content Include="ElcaPIMTool\tools\spkl\unpack.bat" />
-    <Content Include="ElcaPIMTool\tools\XrmDefinitelyTyped\Run.fsx" />
-    <Content Include="ElcaPIMTool\tools\XrmDefinitelyTyped\Run.ps1" />
-    <Content Include="ElcaPIMTool\tools\XrmDefinitelyTyped\XrmDefinitelyTyped.exe.config" />
+    <Content Include="ElcaPIMTool\Apps\PIMDashboard\styles.scss" />
+    <Content Include="ElcaPIMTool\Apps\PIMDashboard\_global.scss" />
+    <Content Include="ElcaPIMTool\Apps\PIMDashboard\_variable.scss" />
     <None Include="packages.config" />
     <Content Include="spkl\unpack.bat" />
     <Content Include="spkl\pack+import.bat" />
@@ -404,7 +399,6 @@
     <Content Include="spkl\deploy-workflows.bat" />
     <Content Include="spkl\deploy-webresources.bat" />
     <Content Include="spkl\deploy-plugins.bat" />
-    <Content Include="spkl.json" />
     <Content Include="tsconfig.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -412,9 +406,6 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
-    <Content Include="XrmDefinitelyTyped\XrmDefinitelyTyped.exe.config" />
-    <Content Include="XrmDefinitelyTyped\Run.ps1" />
-    <Content Include="XrmDefinitelyTyped\Run.fsx" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ElcaPIMTool\Libs\" />
@@ -423,13 +414,14 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="ElcaPIMTool\Apps\PIMDashboard\PIMDashboardScript.ts" />
+    <TypeScriptCompile Include="ElcaPIMTool\Apps\PIMDashboard\Project.ts" />
     <TypeScriptCompile Include="ElcaPIMTool\Apps\src\PIMDashboardScript.ts" />
     <TypeScriptCompile Include="ElcaPIMTool\Apps\src\Project.ts" />
     <TypeScriptCompile Include="ElcaPIMTool\Common\common.ts" />
-    <TypeScriptCompile Include="ElcaPIMTool\Entities\Project\CloseButtonHandler.ts" />
+    <TypeScriptCompile Include="ElcaPIMTool\Entities\Project\CloseButtonRibbonHandler.ts" />
     <TypeScriptCompile Include="ElcaPIMTool\Entities\Project\DateHandler.ts" />
     <TypeScriptCompile Include="ElcaPIMTool\Entities\Project\DisableProjectNumberFieldOnLoad.ts" />
-    <TypeScriptCompile Include="ElcaPIMTool\Entities\Project\LinkEmployeeByVisaOnSave.ts" />
     <TypeScriptCompile Include="ElcaPIMTool\Entities\Project\PluginResources.ts" />
     <TypeScriptCompile Include="ElcaPIMTool\Entities\Project\ValidateMemberVisaOnChange.ts" />
     <TypeScriptCompile Include="ElcaPIMTool\Typings\XRM\dg.xrmquery.web.d.ts" />

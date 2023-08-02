@@ -16,7 +16,7 @@ using System.Configuration;
 using Microsoft.Xrm.Sdk;
 using Microsoft.Xrm.Sdk.Query;
 using Microsoft.Xrm.Sdk.Client;
-using CrmEarlyBound;
+using ElcaPIMTool.ElcaPIMTool.Common.CrmEarlyBound;
 using System.Linq;
 using System.ServiceModel;
 

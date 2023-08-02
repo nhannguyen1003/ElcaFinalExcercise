@@ -2,7 +2,7 @@
   "compileOnSave": false,
   "compilerOptions": {
     "module": "commonjs",
-    "outDir": "ElcaPIMTool/Apps/js",
+    "outDir": "js",
     "removeComments": false,
     "sourceMap": true,
     "target": "es5"

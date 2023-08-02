@@ -7,7 +7,7 @@
         <Plugin Description="Plug-in to Delete of elca_project" FriendlyName="Delete of elca_project" Name="ElcaPIMTool.ElcaPIMTool.Plugins.PreValidateElcaProjectEntityDelete" Id="3a9d47e6-45ff-42b5-8f02-fccc7375ec80" TypeName="ElcaPIMTool.ElcaPIMTool.Plugins.PreValidateElcaProjectEntityDelete">
           <Steps>
             <clear />
-            <Step AsyncAutoDelete="false" Name="Delete of elca_project" Description="Delete of elca_project" Id="14e27826-5125-ee11-87d4-0050569fda1a" ImpersonatingUserId="00000000-0000-0000-0000-000000000000" MessageName="Delete" Mode="Synchronous" PrimaryEntityName="elca_project" Rank="1" Stage="PreOutsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
+            <Step AsyncAutoDelete="false" Name="Delete of elca_project" Description="Delete of elca_project" Id="900041b3-ea30-ee11-87d4-0050569fda1a" ImpersonatingUserId="00000000-0000-0000-0000-000000000000" MessageName="Delete" Mode="Synchronous" PrimaryEntityName="elca_project" Rank="1" Stage="PreOutsideTransaction" SupportedDeployment="ServerOnly" MessageEntityId="00000000-0000-0000-0000-000000000000">
               <Images />
             </Step>
           </Steps>

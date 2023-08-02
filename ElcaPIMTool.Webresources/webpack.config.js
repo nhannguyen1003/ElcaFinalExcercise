@@ -5,8 +5,6 @@ const autoprefixer = require("autoprefixer");
 
 const webpack = require("webpack");
 
-ENTRY_PATH = path.resolve(__dirname, "ElcaPIMTool/Entities/Project");
-DIST_PATH = path.resolve(__dirname, "ElcaPIMTool/dist");
 
 var config = {
   resolve: {
@@ -14,15 +12,6 @@ var config = {
   },
   module: {
     rules: [
-      {
-        test: /\.(png|jpe?g|gif)$/i,
-        loader: "file-loader",
-        options: {
-          name: "[name].[ext]",
-          outputPath: 'assets/',
-          publicPath: 'assets/'
-        },
-      },
       {
         test: /\.ts$/,
         loader: "ts-loader",
@@ -58,11 +47,14 @@ var config = {
 
 var ElcaPIMToolConfig = Object.assign({}, config, {
   entry: {
-    PluginResources: path.join(ENTRY_PATH, "PluginResources.ts"),
-    PIMDashboardScript: path.join(__dirname, "ElcaPIMTool/Apps/src/PIMDashboardScript.ts"),
+    "js/CloseButtonRibbonHandler": path.join(__dirname, "ElcaPIMTool/Entities/Project/CloseButtonRibbonHandler.ts"),
+    "js/DateHandler": path.join(__dirname, "ElcaPIMTool/Entities/Project/DateHandler.ts"),
+    "js/DisableProjectNumberFieldOnLoad": path.join(__dirname, "ElcaPIMTool/Entities/Project/DisableProjectNumberFieldOnLoad.ts"),
+    "js/ValidateMemberVisaOnChange": path.join(__dirname, "ElcaPIMTool/Entities/Project/ValidateMemberVisaOnChange.ts"),
+    "/Apps/PIMDashboard/PIMDashboard": path.join(__dirname, "ElcaPIMTool/Apps/PIMDashboard/PIMDashboardScript.ts"),
   },
   output: {
-    path: DIST_PATH,
+    path: path.join(__dirname, "ElcaPIMTool"),
     filename: "[name].js",
     library: "ElcaPIMTool",
     libraryTarget: "var",

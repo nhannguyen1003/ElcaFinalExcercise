@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Microsoft.Xrm.Sdk;
-using CrmEarlyBound;
+using ElcaPIMTool.ElcaPIMTool.Common.CrmEarlyBound;
 using ElcaPIMTool.Plugins;
 using Microsoft.Xrm.Sdk.Query;
 using Microsoft.Xrm.Sdk.Client;
@@ -79,16 +79,17 @@ namespace ElcaPIMTool.Plugins.Unittest
         public void TestCleanup()
         {
             // Clean up the created record after the test is executed
+
+            var crmSvc = new CrmServiceClient(ConfigurationManager.ConnectionStrings["CRMOnline"].ConnectionString);
+            // Prepare the project by Updated projectstatus
             try
             {
-                var crmSvc = new CrmServiceClient(ConfigurationManager.ConnectionStrings["CRMOnline"].ConnectionString);
-                // Prepare the project by Updated projectstatus
                 elca_Project target = crmSvc.Retrieve(elca_Project.EntityLogicalName, id, new ColumnSet()) as elca_Project;
-                if(target.elca_ProjectStatus != elca_ProjectStatus.New) target.elca_ProjectStatus = elca_ProjectStatus.New;
+                if (target.elca_ProjectStatus != elca_ProjectStatus.New) target.elca_ProjectStatus = elca_ProjectStatus.New;
                 crmSvc.Update(target);
                 crmSvc.Delete(elca_Project.EntityLogicalName, id);
             }
-            catch (Exception e) {
+            catch(Exception e){
             }
         }
     }

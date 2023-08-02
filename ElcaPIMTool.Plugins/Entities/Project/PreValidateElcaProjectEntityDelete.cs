@@ -12,9 +12,11 @@
 
 using System;
 using System.ServiceModel;
-using CrmEarlyBound;
 using Microsoft.Xrm.Sdk;
 using Microsoft.Xrm.Sdk.Query;
+using Microsoft.Xrm.Sdk.Client;
+using ElcaPIMTool.ElcaPIMTool.Common.CrmEarlyBound;
+
 
 namespace ElcaPIMTool.ElcaPIMTool.Plugins
 {
@@ -80,7 +82,7 @@ namespace ElcaPIMTool.ElcaPIMTool.Plugins
             }
             catch (Exception ex)
             {
-                //throw ex;
+                throw ex;
             }
         }
     }
