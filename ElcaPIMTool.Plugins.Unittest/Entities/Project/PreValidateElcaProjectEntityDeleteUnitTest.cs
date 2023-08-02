@@ -85,11 +85,13 @@ namespace ElcaPIMTool.Plugins.Unittest
             try
             {
                 elca_Project target = crmSvc.Retrieve(elca_Project.EntityLogicalName, id, new ColumnSet()) as elca_Project;
-                if (target.elca_ProjectStatus != elca_ProjectStatus.New) target.elca_ProjectStatus = elca_ProjectStatus.New;
+                target.elca_ProjectStatus = elca_ProjectStatus.New;
                 crmSvc.Update(target);
                 crmSvc.Delete(elca_Project.EntityLogicalName, id);
             }
-            catch(Exception e){
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
             }
         }
     }
