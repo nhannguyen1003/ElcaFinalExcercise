@@ -1,0 +1,25 @@
+C:\Users\NTNH\source\repos\ElcaPIMTool.Plugins\bin\Debug\ElcaPIMTool.ElcaPIMTool.Plugins.dll
+C:\Users\NTNH\source\repos\ElcaPIMTool.Plugins\bin\Debug\ElcaPIMTool.ElcaPIMTool.Plugins.pdb
+C:\Users\NTNH\source\repos\ElcaPIMTool.Plugins\bin\Debug\Microsoft.Xrm.Sdk.xml
+C:\Users\NTNH\source\repos\ElcaPIMTool.Plugins\bin\Debug\Microsoft.Crm.Sdk.Proxy.xml
+C:\Users\NTNH\source\repos\ElcaPIMTool.Plugins\obj\Debug\ElcaPIMTool.Plugins.csproj.CoreCompileInputs.cache
+C:\Users\NTNH\source\repos\ElcaPIMTool.Plugins\obj\Debug\ElcaPIMTool.Plugins.csproj.CopyComplete
+C:\Users\NTNH\source\repos\ElcaPIMTool.Plugins\obj\Debug\ElcaPIMTool.ElcaPIMTool.Plugins.dll
+C:\Users\NTNH\source\repos\ElcaPIMTool.Plugins\obj\Debug\ElcaPIMTool.ElcaPIMTool.Plugins.pdb
+C:\Users\NTNH\source\repos\ElcaPIMTool.Plugins\bin\Debug\ElcaPIMTool.ElcaPIMTool.Plugins.dll.config
+C:\Users\NTNH\source\repos\ElcaPIMTool.Plugins\bin\Debug\Microsoft.IdentityModel.Clients.ActiveDirectory.xml
+C:\Users\NTNH\source\repos\ElcaPIMTool.Plugins\bin\Debug\Microsoft.Xrm.Sdk.Deployment.xml
+C:\Users\NTNH\source\repos\ElcaPIMTool.Plugins\bin\Debug\Microsoft.Xrm.Sdk.Workflow.xml
+C:\Users\NTNH\source\repos\ElcaPIMTool.Plugins\bin\Debug\Microsoft.Xrm.Tooling.Connector.xml
+C:\Users\NTNH\source\repos\ElcaPIMTool.Plugins\obj\Debug\ElcaPIMTool.Plugins.csproj.AssemblyReference.cache
+C:\Users\NTNH\source\repos\ElcaPIMTool.Plugins\bin\Debug\Castle.Core.xml
+C:\Users\NTNH\source\repos\ElcaPIMTool.Plugins\bin\Debug\FakeItEasy.pdb
+C:\Users\NTNH\source\repos\ElcaPIMTool.Plugins\bin\Debug\FakeItEasy.xml
+C:\Users\NTNH\Desktop\final excercise\ElcaPIMTool.Plugins\bin\Debug\ElcaPIMTool.ElcaPIMTool.Plugins.dll.config
+C:\Users\NTNH\Desktop\final excercise\ElcaPIMTool.Plugins\bin\Debug\ElcaPIMTool.ElcaPIMTool.Plugins.dll
+C:\Users\NTNH\Desktop\final excercise\ElcaPIMTool.Plugins\bin\Debug\ElcaPIMTool.ElcaPIMTool.Plugins.pdb
+C:\Users\NTNH\Desktop\final excercise\ElcaPIMTool.Plugins\obj\Debug\ElcaPIMTool.Plugins.csproj.AssemblyReference.cache
+C:\Users\NTNH\Desktop\final excercise\ElcaPIMTool.Plugins\obj\Debug\ElcaPIMTool.Plugins.csproj.CoreCompileInputs.cache
+C:\Users\NTNH\Desktop\final excercise\ElcaPIMTool.Plugins\obj\Debug\ElcaPIMTool.Plugins.csproj.CopyComplete
+C:\Users\NTNH\Desktop\final excercise\ElcaPIMTool.Plugins\obj\Debug\ElcaPIMTool.ElcaPIMTool.Plugins.dll
+C:\Users\NTNH\Desktop\final excercise\ElcaPIMTool.Plugins\obj\Debug\ElcaPIMTool.ElcaPIMTool.Plugins.pdb
