@@ -1,0 +1,235 @@
+@import "./../../../node_modules/bootstrap/scss/bootstrap";
+
+// Then add additional custom code here
+@import "variable";
+@import "global";
+
+header {
+  min-width: 1200px;
+  border-bottom: 1px solid rgb(193, 193, 193);
+  .header {
+    display: flex;
+    align-items: flex-end;
+    align-content: space-between;
+    justify-content: space-between;
+    height: 90px;
+    text-align: center;
+    margin: 10px 100px 10px 100px;
+    &__logo {
+      float: left;
+      a {
+        text-decoration: none;
+        color: black;
+      }
+    }
+    &__title {
+      margin-bottom: 10px;
+      margin-right: 300px;
+      font-size: $font-xlarge;
+      font-weight: $style-semi;
+      position: absolute;
+      left: 270px;
+      min-width: 270px;
+    }
+    &__main_list {
+      font-size: $font-small;
+      font-weight: $style-semi;
+      margin-bottom: 10px;
+      float: right;
+      .navlinks {
+        display: flex;
+        align-items: flex-end;
+        list-style: none;
+        padding: 0;
+        text-align: center;
+
+        li {
+          width: auto;
+          padding: 0;
+          padding-left: 3rem;
+        }
+        .languages {
+          margin-right: 60px;
+          #lang_fr {
+            color: $blue;
+          }
+        }
+        #help {
+          color: $blue;
+        }
+      }
+    }
+  }
+}
+
+section {
+  min-width: 1200px;
+  height: 1040px;
+  display: flex;
+  margin-left: 100px;
+  justify-content: flex-start;
+  aside {
+    margin-left: 20px;
+    width: 150px;
+    border-right: 1px solid rgb(193, 193, 193);
+    li {
+      margin-bottom: 24px;
+    }
+    li:first-child {
+      a {
+        color: black;
+      }
+      margin-top: 60px;
+      margin-bottom: 48px;
+      font-size: $font-large;
+      font-weight: $style-semi;
+    }
+    li:nth-child(2) {
+      a {
+        color: $blue;
+      }
+      font-size: $font-large;
+      font-weight: $style-semi;
+      margin-bottom: 30px;
+    }
+  }
+  main {
+    margin-right: 80px;
+    width: 100%;
+    margin-left: 50px;
+    .main-title {
+      display: block;
+      padding: 30px 0px;
+      margin-right: 50px;
+      border-bottom: 1px solid rgb(193, 193, 193);
+      font-weight: $style-semi;
+      font-size: large;
+    }
+    .search-taskbar {
+      margin-top: 24px;
+      margin-bottom: 48px;
+      #myForm {
+        display: flex;
+        flex-wrap: wrap;
+        .form-item{
+          flex: 1 1;
+        }
+        #searchInput {
+          flex: 1 1 25%;
+          height: 36px;
+          width: 360px;
+          border-radius: 5px;
+          margin-right: 24px;
+        }
+        #selectInput {
+          height: 36px;
+          width: 180px;
+          border-radius: 5px;
+          border: solid 2px rgb(105, 105, 105);
+          margin-right: 64px;
+          option[value=""][disabled] {
+            display: none;
+          }
+          option {
+            color: #000;
+          }
+        }
+        #selectInput:required:invalid {
+          color: rgb(129, 129, 129);
+        }
+
+        #submitButton {
+          height: 42px;
+          width: 160px;
+          border-radius: 5px;
+          background-color: $blue;
+          color: white;
+          border: none;
+          margin-right: 50px;
+        }
+        #resetButton {
+          height: 36px;
+          color: $blue;
+          background-color: white;
+          border: none;
+        }
+      }
+    }
+    .main-table {
+      th {
+        color: $grey;
+        font-weight: $style-regular;
+        font-size: $font-med;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        height: 32px;
+        padding-left: 20px;
+      }
+      input {
+        height: 15px;
+        width: 15px;
+      }
+      td {
+        color: $grey;
+        font-weight: $style-semi;
+        font-size: $font-med;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        padding-left: 20px;
+      }
+      .even{
+        button{
+          background-color: inherit;
+        }
+      }
+      td:first-child {
+        width: 35px;
+        margin-left: 10px;
+      }
+      td:nth-child(2) {
+        width: 90px;
+        padding-right: 20px;
+        a {
+          color: $blue ;
+          text-decoration: underline;
+         }
+       
+      }
+      td:nth-child(3) {
+        width: 360px;
+      }
+      td:nth-child(4) {
+        width: 120px;
+      }
+      td:nth-child(5) {
+        width: 180px;
+      }
+      td:nth-child(6) {
+        width: 120px;
+      }
+      td:last-child {
+        img {
+          height: 15px;
+          width: 15px;
+        }
+      }
+    }
+    .dataTables_paginate {
+      margin-top: 30px !important;
+    }
+    .paginate_button {
+      height: 36px;
+      color: $blue;
+      border: solid 1px #e0e0e0;
+      border-radius: 3px;
+      padding: 5px;
+    }
+    .paginate_button:hover {
+      background-color: rgb(186, 201, 218);
+    }
+    .current {
+      background-color: rgb(244, 249, 255);
+    }
+    .dataTables_wrapper .dataTables_paginate .paginate_button {
+      padding: 5px 10px !important;
+    }
+  }
+}

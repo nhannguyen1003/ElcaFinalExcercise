@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.33529.622
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{88A30576-7583-4F75-8136-5EFD2C14ADFF}") = "ElcaPIMTool.Packages", "ElcaPIMTool.Packages\ElcaPIMTool.Packages.csproj", "{90E91DFB-A339-4855-A7BB-4E2AE6FE2466}"
+	ProjectSection(ProjectDependencies) = postProject
+		{D339FAC8-4B20-417B-B432-0327E52B4278} = {D339FAC8-4B20-417B-B432-0327E52B4278}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElcaPIMTool.Common", "ElcaPIMTool.Common\ElcaPIMTool.Common.csproj", "{FB015F9B-E2FA-4BFE-93F5-3166959732D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElcaPIMTool.Webresources", "ElcaPIMTool.Webresources\ElcaPIMTool.Webresources.csproj", "{843FC9A4-A562-4CD8-98FE-D65964E31B24}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElcaPIMTool.Plugins.Unittest", "ElcaPIMTool.Plugins.Unittest\ElcaPIMTool.Plugins.Unittest.csproj", "{7A38CB5A-6867-4634-A881-76660F786C1D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElcaPIMTool.Plugins", "ElcaPIMTool.Plugins\ElcaPIMTool.Plugins.csproj", "{D339FAC8-4B20-417B-B432-0327E52B4278}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{90E91DFB-A339-4855-A7BB-4E2AE6FE2466}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90E91DFB-A339-4855-A7BB-4E2AE6FE2466}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90E91DFB-A339-4855-A7BB-4E2AE6FE2466}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{90E91DFB-A339-4855-A7BB-4E2AE6FE2466}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90E91DFB-A339-4855-A7BB-4E2AE6FE2466}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90E91DFB-A339-4855-A7BB-4E2AE6FE2466}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{FB015F9B-E2FA-4BFE-93F5-3166959732D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB015F9B-E2FA-4BFE-93F5-3166959732D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB015F9B-E2FA-4BFE-93F5-3166959732D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB015F9B-E2FA-4BFE-93F5-3166959732D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{843FC9A4-A562-4CD8-98FE-D65964E31B24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{843FC9A4-A562-4CD8-98FE-D65964E31B24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{843FC9A4-A562-4CD8-98FE-D65964E31B24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{843FC9A4-A562-4CD8-98FE-D65964E31B24}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A38CB5A-6867-4634-A881-76660F786C1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A38CB5A-6867-4634-A881-76660F786C1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A38CB5A-6867-4634-A881-76660F786C1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A38CB5A-6867-4634-A881-76660F786C1D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D339FAC8-4B20-417B-B432-0327E52B4278}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D339FAC8-4B20-417B-B432-0327E52B4278}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D339FAC8-4B20-417B-B432-0327E52B4278}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D339FAC8-4B20-417B-B432-0327E52B4278}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {54FD7C1A-1E24-4A05-B0F8-744AFA175D35}
+	EndGlobalSection
+	GlobalSection(CRMSolutionProperties) = preSolution
+		SolutionIsBoundToCRM = True
+	EndGlobalSection
+EndGlobal

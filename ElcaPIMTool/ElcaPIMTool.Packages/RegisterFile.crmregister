@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Register xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/crm/2011/tools/pluginregistration">
+  <Solutions>
+    <Solution Assembly="ElcaPIMTool.Plugins.dll" Id="0e7211bd-17d6-465f-a706-d5610de8e3c5" IsolationMode="Sandbox" SourceType="Database">
+      <PluginTypes>
+        <clear />
+        <Plugin Description="Plug-in to ElcaPIMTool.Plugins.PostLinkRelatedEmployeeToProject" FriendlyName="ElcaPIMTool.Plugins.PostLinkRelatedEmployeeToProject" Name="ElcaPIMTool.Plugins.PostLinkRelatedEmployeeToProject" Id="77019aaf-7212-47bf-ae94-912ee148d103" TypeName="ElcaPIMTool.Plugins.PostLinkRelatedEmployeeToProject" />
+        <Plugin Description="Plug-in to ElcaPIMTool.Plugins.PostUpdateProjectRelationshipPlugin" FriendlyName="ElcaPIMTool.Plugins.PostUpdateProjectRelationshipPlugin" Name="ElcaPIMTool.Plugins.PostUpdateProjectRelationshipPlugin" Id="508cdcae-c7f9-4ca2-b9f2-bc3888f75d3d" TypeName="ElcaPIMTool.Plugins.PostUpdateProjectRelationshipPlugin" />
+        <Plugin Description="Plug-in to ElcaPIMTool.Plugins.PreValidateElcaProjectEntityDelete" FriendlyName="ElcaPIMTool.Plugins.PreValidateElcaProjectEntityDelete" Name="ElcaPIMTool.Plugins.PreValidateElcaProjectEntityDelete" Id="8a7613c7-e9c7-49ed-8574-6c649c00943f" TypeName="ElcaPIMTool.Plugins.PreValidateElcaProjectEntityDelete" />
+      </PluginTypes>
+    </Solution>
+  </Solutions>
+  <XamlWorkflows />
+</Register>
