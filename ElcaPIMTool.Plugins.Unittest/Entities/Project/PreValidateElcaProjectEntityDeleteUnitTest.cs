@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Microsoft.Xrm.Sdk;
-using ElcaPIMTool.ElcaPIMTool.Common.CrmEarlyBound;
+using ElcaPIMTool.Common.CrmEarlyBound;
 using ElcaPIMTool.Plugins;
 using Microsoft.Xrm.Sdk.Query;
 using Microsoft.Xrm.Sdk.Client;

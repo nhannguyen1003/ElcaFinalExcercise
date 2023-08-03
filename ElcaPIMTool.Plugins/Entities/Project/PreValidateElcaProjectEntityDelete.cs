@@ -15,10 +15,10 @@ using System.ServiceModel;
 using Microsoft.Xrm.Sdk;
 using Microsoft.Xrm.Sdk.Query;
 using Microsoft.Xrm.Sdk.Client;
-using ElcaPIMTool.ElcaPIMTool.Common.CrmEarlyBound;
+using ElcaPIMTool.Common.CrmEarlyBound;
 
 
-namespace ElcaPIMTool.ElcaPIMTool.Plugins
+namespace ElcaPIMTool.Plugins
 {
 
     /// <summary>

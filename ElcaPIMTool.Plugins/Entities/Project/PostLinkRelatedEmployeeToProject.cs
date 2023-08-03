@@ -16,11 +16,11 @@ using System.Configuration;
 using Microsoft.Xrm.Sdk;
 using Microsoft.Xrm.Sdk.Query;
 using Microsoft.Xrm.Sdk.Client;
-using ElcaPIMTool.ElcaPIMTool.Common.CrmEarlyBound;
+using ElcaPIMTool.Common.CrmEarlyBound;
 using System.Linq;
 using System.ServiceModel;
 
-namespace ElcaPIMTool.ElcaPIMTool.Plugins
+namespace ElcaPIMTool.Plugins
 {
 
     /// <summary>
@@ -62,125 +62,105 @@ namespace ElcaPIMTool.ElcaPIMTool.Plugins
         {
             var service = localContext.OrganizationService;
 
-            try
+            var pluginExecutionContext = localContext.PluginExecutionContext;
+            var primaryEntityName = pluginExecutionContext.PrimaryEntityName;
+            var primaryEntityId = pluginExecutionContext.PrimaryEntityId;
+            var projectEntity = new EntityReference(primaryEntityName, primaryEntityId);
+            var orgService = new OrganizationServiceContext(localContext.OrganizationService);
+
+            //get visa related to project from members field
+            var relatedEntityListByVisa = getReferencesCollectionByVisa(projectEntity, localContext);
+            var relationship = new Relationship(elca_Project.Relationships.elca_project_contact);
+            //find entity was assosiated to project 
+            var associatedList = getAssociatedRelations(projectEntity, localContext);
+            var disAssociateList = new EntityReferenceCollection();
+
+            //add entities that are no longer associated with the project to the list
+            foreach (var association in associatedList)
             {
-                var pluginExecutionContext = localContext.PluginExecutionContext;
-                var primaryEntityName = pluginExecutionContext.PrimaryEntityName;
-                var primaryEntityId = pluginExecutionContext.PrimaryEntityId;
-                var projectEntity = new EntityReference(primaryEntityName, primaryEntityId);
-                var orgService = new OrganizationServiceContext(localContext.OrganizationService);
-
-                //get visa related to project from members field
-                var relatedEntityListByVisa = getReferencesCollectionByVisa(projectEntity, localContext);
-                var relationship = new Relationship(elca_Project.Relationships.elca_project_contact);
-                //find entity was assosiated to project 
-                var associatedList = getAssociatedRelations(projectEntity, localContext);
-                var disAssociateList = new EntityReferenceCollection();
-
-                //add entities that are no longer associated with the project to the list
-                foreach (var association in associatedList)
+                if (!relatedEntityListByVisa.Contains(association))
                 {
-                    if (!relatedEntityListByVisa.Contains(association))
-                    {
-                        disAssociateList.Add(association);
-                    }
-                }
-                //re
-                if (disAssociateList.Count > 0)
-                {
-                    service.Disassociate(primaryEntityName, primaryEntityId, relationship, disAssociateList);
-                }
-
-                //remove exist associated employee from relatedEntityListByVisa list
-                EntityReferenceCollection entitiesToRemove = new EntityReferenceCollection();
-                foreach (var relatedEntity in relatedEntityListByVisa)
-                {
-                    if (associatedList.Contains(relatedEntity))
-                    {
-                        entitiesToRemove.Add(relatedEntity);
-                    }
-                }
-
-                foreach (var entityToRemove in entitiesToRemove)
-                {
-                    relatedEntityListByVisa.Remove(entityToRemove);
-                }
-
-                if (relatedEntityListByVisa.Count > 0)
-                {
-                    //associate remain employee to project
-                    service.Associate(primaryEntityName, primaryEntityId, relationship, relatedEntityListByVisa);
+                    disAssociateList.Add(association);
                 }
             }
-            catch (Exception ex)
+            //dissassociate members from project
+            if (disAssociateList.Count > 0)
             {
-                throw ex;
+                service.Disassociate(primaryEntityName, primaryEntityId, relationship, disAssociateList);
+            }
+
+            //remove exist associated employee from relatedEntityListByVisa list
+            EntityReferenceCollection entitiesToRemove = new EntityReferenceCollection();
+            foreach (var relatedEntity in relatedEntityListByVisa)
+            {
+                if (associatedList.Contains(relatedEntity))
+                {
+                    entitiesToRemove.Add(relatedEntity);
+                }
+            }
+
+            foreach (var entityToRemove in entitiesToRemove)
+            {
+                relatedEntityListByVisa.Remove(entityToRemove);
+            }
+
+            if (relatedEntityListByVisa.Count > 0)
+            {
+                //associate remain employee to project
+                service.Associate(primaryEntityName, primaryEntityId, relationship, relatedEntityListByVisa);
             }
         }
         private EntityReferenceCollection getReferencesCollectionByVisa(EntityReference project, LocalPluginContext localContext)
         {
             var service = localContext.OrganizationService;
-            try
+
+            QueryExpression projectQuery = new QueryExpression(elca_Project.EntityLogicalName);
+            projectQuery.ColumnSet = new ColumnSet(elca_Project.Fields.elca_Members);
+            projectQuery.Criteria.AddCondition(elca_Project.Fields.elca_ProjectId, ConditionOperator.Equal, project.Id);
+            
+            Entity projectEntity = service.RetrieveMultiple(projectQuery).Entities.FirstOrDefault();
+            
+            if (projectEntity != null && projectEntity.Contains("elca_members"))
             {
-                QueryExpression projectQuery = new QueryExpression(elca_Project.EntityLogicalName);
-                projectQuery.ColumnSet = new ColumnSet(elca_Project.Fields.elca_Members);
-                projectQuery.Criteria.AddCondition(elca_Project.Fields.elca_ProjectId, ConditionOperator.Equal, project.Id);
-
-                Entity projectEntity = service.RetrieveMultiple(projectQuery).Entities.FirstOrDefault();
-
-                if (projectEntity != null && projectEntity.Contains("elca_members"))
+                string listOfMembersVisa = projectEntity.GetAttributeValue<string>("elca_members");
+            
+                if (!String.IsNullOrEmpty(listOfMembersVisa))
                 {
-                    string listOfMembersVisa = projectEntity.GetAttributeValue<string>("elca_members");
-
-                    if (!String.IsNullOrEmpty(listOfMembersVisa))
+                    var visaList = listOfMembersVisa.Split(',').Select(visa => visa.Trim());
+                    QueryExpression contactQuery = new QueryExpression(Contact.EntityLogicalName);
+                    contactQuery.ColumnSet = new ColumnSet(Contact.Fields.Id);
+                    contactQuery.Criteria.AddCondition(new ConditionExpression(Contact.Fields.elca_Visa, ConditionOperator.In, visaList.ToArray()));
+            
+                    DataCollection<Entity> contacts = service.RetrieveMultiple(contactQuery).Entities;
+                    EntityReferenceCollection validContacts = new EntityReferenceCollection();
+            
+                    foreach (Entity contact in contacts)
                     {
-                        var visaList = listOfMembersVisa.Split(',').Select(visa => visa.Trim());
-                        QueryExpression contactQuery = new QueryExpression(Contact.EntityLogicalName);
-                        contactQuery.ColumnSet = new ColumnSet(Contact.Fields.Id);
-                        contactQuery.Criteria.AddCondition(new ConditionExpression(Contact.Fields.elca_Visa, ConditionOperator.In, visaList.ToArray()));
-
-                        DataCollection<Entity> contacts = service.RetrieveMultiple(contactQuery).Entities;
-                        EntityReferenceCollection validContacts = new EntityReferenceCollection();
-
-                        foreach (Entity contact in contacts)
-                        {
-                            validContacts.Add(contact.ToEntityReference());
-                        }
-                        return validContacts;
+                        validContacts.Add(contact.ToEntityReference());
                     }
+                    return validContacts;
                 }
-            }
-            catch (Exception e)
-            {
-                throw e;
             }
             return new EntityReferenceCollection();
         }
-
         private EntityReferenceCollection getAssociatedRelations(EntityReference project, LocalPluginContext localContext)
         {
             var service = localContext.OrganizationService;
-            try
-            {
-                QueryExpression query = new QueryExpression(Contact.EntityLogicalName);
-                query.ColumnSet = new ColumnSet(Contact.Fields.Id);
-                query.AddLink(elca_Project.Relationships.elca_project_contact, Contact.Fields.Id, Contact.Fields.Id)
-                    .LinkCriteria.AddCondition(elca_Project.Fields.Id, ConditionOperator.Equal, project.Id);
 
-                EntityCollection result = service.RetrieveMultiple(query);
-                EntityReferenceCollection associatedRelations = new EntityReferenceCollection();
+            QueryExpression query = new QueryExpression(Contact.EntityLogicalName);
+            query.ColumnSet = new ColumnSet(Contact.Fields.Id);
+            query.AddLink(elca_Project.Relationships.elca_project_contact, Contact.Fields.Id, Contact.Fields.Id)
+                .LinkCriteria.AddCondition(elca_Project.Fields.Id, ConditionOperator.Equal, project.Id);
 
-                foreach (Entity entity in result.Entities)
-                {
-                    EntityReference contactRef = entity.ToEntityReference();
-                    associatedRelations.Add(contactRef);
-                }
-                return associatedRelations;
-            }
-            catch (Exception e)
+            EntityCollection result = service.RetrieveMultiple(query);
+            EntityReferenceCollection associatedRelations = new EntityReferenceCollection();
+
+            foreach (Entity entity in result.Entities)
             {
-                throw e;
+                EntityReference contactRef = entity.ToEntityReference();
+                associatedRelations.Add(contactRef);
             }
+            return associatedRelations;
         }
     }
 }

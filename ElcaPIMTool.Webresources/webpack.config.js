@@ -1,6 +1,5 @@
 ﻿const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
 const autoprefixer = require("autoprefixer");
 
 const webpack = require("webpack");
@@ -45,32 +44,46 @@ var config = {
   devtool: "inline-source-map",
 };
 
+
+
 var ElcaPIMToolConfig = Object.assign({}, config, {
   entry: {
-    "js/CloseButtonRibbonHandler": path.join(__dirname, "ElcaPIMTool/Entities/Project/CloseButtonRibbonHandler.ts"),
-    "js/DateHandler": path.join(__dirname, "ElcaPIMTool/Entities/Project/DateHandler.ts"),
-    "js/DisableProjectNumberFieldOnLoad": path.join(__dirname, "ElcaPIMTool/Entities/Project/DisableProjectNumberFieldOnLoad.ts"),
-    "js/ValidateMemberVisaOnChange": path.join(__dirname, "ElcaPIMTool/Entities/Project/ValidateMemberVisaOnChange.ts"),
-    "/Apps/PIMDashboard/PIMDashboard": path.join(__dirname, "ElcaPIMTool/Apps/PIMDashboard/PIMDashboardScript.ts"),
+    "CloseButtonRibbonEnableRule": path.join(__dirname, "ElcaPIMTool/Entities/Project/CloseButtonRibbonEnableRule.ts"),
+    "CloseButtonRibbonOnClick": path.join(__dirname, "ElcaPIMTool/Entities/Project/CloseButtonRibbonOnClick.ts"),
+    "DisableProjectNumberFieldOnLoad": path.join(__dirname, "ElcaPIMTool/Entities/Project/DisableProjectNumberFieldOnLoad.ts"),
+    "ValidateEndDateOnChange": path.join(__dirname, "ElcaPIMTool/Entities/Project/ValidateEndDateOnChange.ts"),
+    "ValidateEndDateOnSave": path.join(__dirname, "ElcaPIMTool/Entities/Project/ValidateEndDateOnSave.ts"),
+    "ValidateMemberVisaOnChange": path.join(__dirname, "ElcaPIMTool/Entities/Project/ValidateMemberVisaOnChange.ts"),
+
   },
   output: {
-    path: path.join(__dirname, "ElcaPIMTool"),
+    path: path.join(__dirname, "ElcaPIMTool/js"),
     filename: "[name].js",
-    library: "ElcaPIMTool",
-    libraryTarget: "var",
-  },
-  plugins: [
-    new MiniCssExtractPlugin({
-      filename: "[name].css",
-    }),
-    // new HtmlWebpackPlugin({
-    //   template: "./ElcaPIMTool/Apps/src/index.html",
-    // }),
-    new webpack.ProvidePlugin({
-      $: "jquery",
-      jQuery: "jquery",
-    }),
-  ],
+    library: "[name]",
+    libraryTarget: "global",
+  }
 });
 
-module.exports = [ElcaPIMToolConfig];
+var ElcaPIMDashboardConfig = Object.assign({}, config, {
+entry: {  "/Apps/PIMDashboard/PIMDashboard": path.join(__dirname, "ElcaPIMTool/Apps/PIMDashboard/PIMDashboard.ts")},
+output: {
+  path: path.join(__dirname, "ElcaPIMTool"),
+  filename: "[name].js",
+  library: "[name]",
+  libraryTarget: "global",
+},
+plugins: [
+  new MiniCssExtractPlugin({
+    filename: "[name].css",
+  }),
+  // new HtmlWebpackPlugin({
+  //   template: "./ElcaPIMTool/Apps/src/index.html",
+  // }),
+  new webpack.ProvidePlugin({
+    $: "jquery",
+    jQuery: "jquery",
+  }),
+],
+});
+
+module.exports = [ElcaPIMToolConfig, ElcaPIMDashboardConfig];

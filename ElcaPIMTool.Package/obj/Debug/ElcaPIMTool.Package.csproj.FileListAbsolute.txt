@@ -1,0 +1,13 @@
+C:\Users\NTNH\Desktop\final excercise\ElcaPIMTool.Package\bin\Debug\ElcaPIMTool.ElcaPIMTool.Package.dll
+C:\Users\NTNH\Desktop\final excercise\ElcaPIMTool.Package\bin\Debug\ElcaPIMTool.ElcaPIMTool.Package.pdb
+C:\Users\NTNH\Desktop\final excercise\ElcaPIMTool.Package\bin\Debug\ElcaPIMTool.Plugins.dll
+C:\Users\NTNH\Desktop\final excercise\ElcaPIMTool.Package\bin\Debug\Microsoft.Xrm.Sdk.dll
+C:\Users\NTNH\Desktop\final excercise\ElcaPIMTool.Package\bin\Debug\Microsoft.Crm.Sdk.Proxy.dll
+C:\Users\NTNH\Desktop\final excercise\ElcaPIMTool.Package\bin\Debug\ElcaPIMTool.Plugins.pdb
+C:\Users\NTNH\Desktop\final excercise\ElcaPIMTool.Package\bin\Debug\Microsoft.Xrm.Sdk.xml
+C:\Users\NTNH\Desktop\final excercise\ElcaPIMTool.Package\bin\Debug\Microsoft.Crm.Sdk.Proxy.xml
+C:\Users\NTNH\Desktop\final excercise\ElcaPIMTool.Package\obj\Debug\ElcaPIMTool.Package.csproj.AssemblyReference.cache
+C:\Users\NTNH\Desktop\final excercise\ElcaPIMTool.Package\obj\Debug\ElcaPIMTool.Package.csproj.CoreCompileInputs.cache
+C:\Users\NTNH\Desktop\final excercise\ElcaPIMTool.Package\obj\Debug\ElcaPIMTool.Package.csproj.CopyComplete
+C:\Users\NTNH\Desktop\final excercise\ElcaPIMTool.Package\obj\Debug\ElcaPIMTool.ElcaPIMTool.Package.dll
+C:\Users\NTNH\Desktop\final excercise\ElcaPIMTool.Package\obj\Debug\ElcaPIMTool.ElcaPIMTool.Package.pdb

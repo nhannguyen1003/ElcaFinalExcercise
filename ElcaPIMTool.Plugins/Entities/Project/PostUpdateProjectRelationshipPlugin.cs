@@ -16,12 +16,12 @@ using System.Configuration;
 using Microsoft.Xrm.Sdk;
 using Microsoft.Xrm.Sdk.Query;
 using Microsoft.Xrm.Sdk.Client;
-using ElcaPIMTool.ElcaPIMTool.Common.CrmEarlyBound;
+using ElcaPIMTool.Common.CrmEarlyBound;
 using System.Linq;
 using System.ServiceModel;
 using System.Collections.Generic;
 
-namespace ElcaPIMTool.ElcaPIMTool.Plugins
+namespace ElcaPIMTool.Plugins
 {
 
     /// <summary>

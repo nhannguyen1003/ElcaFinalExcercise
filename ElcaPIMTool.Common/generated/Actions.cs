@@ -9,7 +9,7 @@
 // Created via this command line: "C:\Users\NTNH\AppData\Roaming\MscrmTools\XrmToolBox\Plugins\DLaB.EarlyBoundGenerator\crmsvcutil.exe" /url:"http://bcv-crm/Test" /generateActions /out:"C:\Users\NTNH\AppData\Roaming\MscrmTools\XrmToolBox\Settings\EBG\Actions.cs" /namespace:"CrmEarlyBound" /SuppressGeneratedCodeAttribute /codecustomization:"DLaB.CrmSvcUtilExtensions.Action.CustomizeCodeDomService,DLaB.CrmSvcUtilExtensions" /codegenerationservice:"DLaB.CrmSvcUtilExtensions.Action.CustomCodeGenerationService,DLaB.CrmSvcUtilExtensions" /codewriterfilter:"DLaB.CrmSvcUtilExtensions.Action.CodeWriterFilterService,DLaB.CrmSvcUtilExtensions" /metadataproviderservice:"DLaB.CrmSvcUtilExtensions.BaseMetadataProviderService,DLaB.CrmSvcUtilExtensions" 
 //------------------------------------------------------------------------------
 
-namespace ElcaPIMTool.ElcaPIMTool.Common.CrmEarlyBound
+namespace ElcaPIMTool.Common.CrmEarlyBound
 {
 	
 	
