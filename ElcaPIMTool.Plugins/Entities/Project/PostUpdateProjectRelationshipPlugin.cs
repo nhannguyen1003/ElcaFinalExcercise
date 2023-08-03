@@ -66,84 +66,77 @@ namespace ElcaPIMTool.Plugins
                 throw new InvalidPluginExecutionException("localContext");
             }
 
-            try
+            var pluginExecutionContext = localContext.PluginExecutionContext;
+            IOrganizationService orgService = localContext.OrganizationService;
+
+            elca_Project project ;
+            if (pluginExecutionContext.InputParameters.Contains("Target")
+                        && pluginExecutionContext.InputParameters["Target"] is EntityReference)
             {
-                var pluginExecutionContext = localContext.PluginExecutionContext;
-                IOrganizationService orgService = localContext.OrganizationService;
+                EntityReference projectRef = pluginExecutionContext.InputParameters["Target"] as EntityReference;
+                project = orgService.Retrieve(projectRef.LogicalName, projectRef.Id, new ColumnSet(elca_Project.Fields.elca_Members)) as elca_Project;
 
-                elca_Project project ;
-                if (pluginExecutionContext.InputParameters.Contains("Target")
-                            && pluginExecutionContext.InputParameters["Target"] is EntityReference)
+
+                if (pluginExecutionContext.InputParameters.Contains("RelatedEntities")
+                && pluginExecutionContext.InputParameters["RelatedEntities"] is EntityReferenceCollection)
                 {
-                    EntityReference projectRef = pluginExecutionContext.InputParameters["Target"] as EntityReference;
-                    project = orgService.Retrieve(projectRef.LogicalName, projectRef.Id, new ColumnSet(elca_Project.Fields.elca_Members)) as elca_Project;
+                    EntityReferenceCollection relatedEntityCol = pluginExecutionContext.InputParameters["RelatedEntities"] as EntityReferenceCollection;
 
-
-                    if (pluginExecutionContext.InputParameters.Contains("RelatedEntities")
-                    && pluginExecutionContext.InputParameters["RelatedEntities"] is EntityReferenceCollection)
+                    List<String> listOfRelatedEntitiesVisa = new List<string>();
+                    foreach (EntityReference entity in relatedEntityCol)
                     {
-                        EntityReferenceCollection relatedEntityCol = pluginExecutionContext.InputParameters["RelatedEntities"] as EntityReferenceCollection;
-
-                        List<String> listOfRelatedEntitiesVisa = new List<string>();
-                        foreach (EntityReference entity in relatedEntityCol)
+                        Contact employee = orgService.Retrieve(entity.LogicalName, entity.Id, new ColumnSet(Contact.Fields.elca_Visa)) as Contact;
+                        listOfRelatedEntitiesVisa.Add(employee.elca_Visa);
+                    }
+                    string updateVisa = "";
+                    if (pluginExecutionContext.MessageName.ToLower() == "associate")
+                    {
+                        if (listOfRelatedEntitiesVisa.Count > 0)
                         {
-                            Contact employee = orgService.Retrieve(entity.LogicalName, entity.Id, new ColumnSet(Contact.Fields.elca_Visa)) as Contact;
-                            listOfRelatedEntitiesVisa.Add(employee.elca_Visa);
-                        }
-                        string updateVisa = "";
-                        if (pluginExecutionContext.MessageName.ToLower() == "associate")
-                        {
-                            if (listOfRelatedEntitiesVisa.Count > 0)
+                            IEnumerable<String> projectMembers = new List<string>();
+                            if (!String.IsNullOrEmpty(project.elca_Members))
+                            { 
+                                projectMembers = project.elca_Members.Split(',').Select(visa => visa.Trim()); 
+                            }
+                            List<String> updateData = new List<String>();
+                            foreach (String visa in projectMembers)
                             {
-                                IEnumerable<String> projectMembers = new List<string>();
-                                if (!String.IsNullOrEmpty(project.elca_Members))
-                                { 
-                                    projectMembers = project.elca_Members.Split(',').Select(visa => visa.Trim()); 
-                                }
-                                List<String> updateData = new List<String>();
-                                foreach (String visa in projectMembers)
+                                updateData.Add(visa);
+                            }
+                            foreach (String visa in listOfRelatedEntitiesVisa)
+                            {
+                                if (!projectMembers.Contains(visa))
                                 {
                                     updateData.Add(visa);
                                 }
-                                foreach (String visa in listOfRelatedEntitiesVisa)
-                                {
-                                    if (!projectMembers.Contains(visa))
-                                    {
-                                        updateData.Add(visa);
-                                    }
-                                }
-                                updateVisa = String.Join(", ", updateData);
-                                project.elca_Members = updateVisa;
                             }
+                            updateVisa = String.Join(", ", updateData);
+                            project.elca_Members = updateVisa;
                         }
-                        else {
-                            if (listOfRelatedEntitiesVisa.Count > 0)
-                            {
-                                IEnumerable<String> projectMembers = new List<string>();
-                                if (!String.IsNullOrEmpty(project.elca_Members))
-                                {
-                                    projectMembers = project.elca_Members.Split(',').Select(visa => visa.Trim());
-                                }
-                                List<String> updateData = new List<String>();
-                                foreach (String visa in projectMembers)
-                                {
-                                    if (!listOfRelatedEntitiesVisa.Contains(visa))
-                                    {
-                                            updateData.Add(visa);
-                                    }
-                                }
-                            
-                                updateVisa = String.Join(", ", updateData);
-                                project.elca_Members = updateVisa;
-                            }
-                        }
-                            orgService.Update(project);
                     }
+                    else {
+                        if (listOfRelatedEntitiesVisa.Count > 0)
+                        {
+                            IEnumerable<String> projectMembers = new List<string>();
+                            if (!String.IsNullOrEmpty(project.elca_Members))
+                            {
+                                projectMembers = project.elca_Members.Split(',').Select(visa => visa.Trim());
+                            }
+                            List<String> updateData = new List<String>();
+                            foreach (String visa in projectMembers)
+                            {
+                                if (!listOfRelatedEntitiesVisa.Contains(visa))
+                                {
+                                        updateData.Add(visa);
+                                }
+                            }
+                        
+                            updateVisa = String.Join(", ", updateData);
+                            project.elca_Members = updateVisa;
+                        }
+                    }
+                        orgService.Update(project);
                 }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
             }
         }
 

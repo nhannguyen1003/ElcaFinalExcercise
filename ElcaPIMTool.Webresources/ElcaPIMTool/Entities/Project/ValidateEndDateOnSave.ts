@@ -14,7 +14,7 @@ export class ValidateEndDate {
         formContext,
         "elca_enddate"
       );
-      if (startDateFieldValue.getTime() > endDateFieldValue.getTime()) {
+      if (endDateFieldValue && startDateFieldValue.getTime() > endDateFieldValue.getTime()) {
         Xrm.Navigation.openAlertDialog({
           text: "End date must be greater than the begin date.",
         });

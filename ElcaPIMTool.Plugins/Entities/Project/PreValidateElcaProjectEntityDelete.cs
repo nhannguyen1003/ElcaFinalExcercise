@@ -62,28 +62,22 @@ namespace ElcaPIMTool.Plugins
             {
                 throw new InvalidPluginExecutionException("localContext");
             }
-            try
-            {
-                var pluginExecutionContext = localContext.PluginExecutionContext;
-                if (pluginExecutionContext.InputParameters.Contains("Target")
-                    && pluginExecutionContext.InputParameters["Target"] is EntityReference)
-                {
-                    IOrganizationService orgService = localContext.OrganizationService;
-                    EntityReference projectRef = pluginExecutionContext.InputParameters["Target"] as EntityReference;
-                    elca_Project project = orgService.Retrieve(projectRef.LogicalName, projectRef.Id, new ColumnSet(elca_Project.Fields.elca_ProjectStatus)) as elca_Project;
 
-                        var statusCode = project.elca_ProjectStatus;
-                        if (statusCode != elca_ProjectStatus.New)
-                        {
-                            throw new InvalidPluginExecutionException("You can only delete new project");
-                        }
+            var pluginExecutionContext = localContext.PluginExecutionContext;
+            if (pluginExecutionContext.InputParameters.Contains("Target")
+                && pluginExecutionContext.InputParameters["Target"] is EntityReference)
+            {
+                IOrganizationService orgService = localContext.OrganizationService;
+                EntityReference projectRef = pluginExecutionContext.InputParameters["Target"] as EntityReference;
+                elca_Project project = orgService.Retrieve(projectRef.LogicalName, projectRef.Id, new ColumnSet(elca_Project.Fields.elca_ProjectStatus)) as elca_Project;
+
+                    var statusCode = project.elca_ProjectStatus;
+                    if (statusCode != elca_ProjectStatus.New)
+                    {
+                        throw new InvalidPluginExecutionException("You can only delete new project");
                     }
+                }
 
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
         }
     }
 }

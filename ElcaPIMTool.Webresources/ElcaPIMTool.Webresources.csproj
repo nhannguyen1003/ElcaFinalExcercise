@@ -208,15 +208,17 @@
     <Content Include="bin\roslyn\VBCSCompiler.exe" />
     <Content Include="bin\System.ValueTuple.dll" />
     <Content Include="bin\XrmDefinitelyTyped.exe" />
-    <Content Include="ElcaPIMTool\Apps\PIMDashboard\index.html" />
+    <Content Include="ElcaPIMTool\Apps\PIMDashboard\PIMDasboard.html" />
     <Content Include="ElcaPIMTool\Apps\PIMDashboard\PIMDashboard.css" />
     <Content Include="ElcaPIMTool\Apps\PIMDashboard\PIMDashboard.js" />
-    <Content Include="ElcaPIMTool\Apps\PIMDashboard\styles.scss" />
+    <Content Include="ElcaPIMTool\Apps\PIMDashboard\PIMDashboard.scss" />
     <Content Include="ElcaPIMTool\Apps\PIMDashboard\_global.scss" />
     <Content Include="ElcaPIMTool\Apps\PIMDashboard\_variable.scss" />
-    <Content Include="ElcaPIMTool\js\CloseButtonRibbonHandler.js" />
-    <Content Include="ElcaPIMTool\js\DateHandler.js" />
+    <Content Include="ElcaPIMTool\js\CloseButtonRibbonEnableRule.js" />
+    <Content Include="ElcaPIMTool\js\CloseButtonRibbonOnClick.js" />
     <Content Include="ElcaPIMTool\js\DisableProjectNumberFieldOnLoad.js" />
+    <Content Include="ElcaPIMTool\js\ValidateEndDateOnChange.js" />
+    <Content Include="ElcaPIMTool\js\ValidateEndDateOnSave.js" />
     <Content Include="ElcaPIMTool\js\ValidateMemberVisaOnChange.js" />
     <Content Include="ElcaPIMTool\tools\spkl\deploy-plugins.bat" />
     <Content Include="ElcaPIMTool\tools\spkl\deploy-webresources.bat" />
@@ -367,13 +369,14 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="ElcaPIMTool\Apps\PIMDashboard\PIMDashboardScript.ts" />
+    <TypeScriptCompile Include="ElcaPIMTool\Apps\PIMDashboard\PIMDashboard.ts" />
     <TypeScriptCompile Include="ElcaPIMTool\Apps\PIMDashboard\Project.ts" />
     <TypeScriptCompile Include="ElcaPIMTool\Common\common.ts" />
-    <TypeScriptCompile Include="ElcaPIMTool\Entities\Project\CloseButtonRibbonHandler.ts" />
-    <TypeScriptCompile Include="ElcaPIMTool\Entities\Project\DateHandler.ts" />
+    <TypeScriptCompile Include="ElcaPIMTool\Entities\Project\CloseButtonRibbonEnableRule.ts" />
+    <TypeScriptCompile Include="ElcaPIMTool\Entities\Project\CloseButtonRibbonOnClick.ts" />
     <TypeScriptCompile Include="ElcaPIMTool\Entities\Project\DisableProjectNumberFieldOnLoad.ts" />
-    <TypeScriptCompile Include="ElcaPIMTool\Entities\Project\PluginResources.ts" />
+    <TypeScriptCompile Include="ElcaPIMTool\Entities\Project\ValidateEndDateOnChange.ts" />
+    <TypeScriptCompile Include="ElcaPIMTool\Entities\Project\ValidateEndDateOnSave.ts" />
     <TypeScriptCompile Include="ElcaPIMTool\Entities\Project\ValidateMemberVisaOnChange.ts" />
     <TypeScriptCompile Include="ElcaPIMTool\Typings\XRM\dg.xrmquery.web.d.ts" />
     <TypeScriptCompile Include="ElcaPIMTool\Typings\XRM\Form\account\Main\Account.d.ts" />
